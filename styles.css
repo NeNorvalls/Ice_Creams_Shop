@@ -1,0 +1,96 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  .container {
+    background-image: url('./images/background.jpeg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  nav {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 5px;
+  }
+  
+  nav a.cart {
+    display: flex;
+    align-items: center;
+  }
+  
+  ion-icon {
+    margin-right: 5px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #333;
+  }
+  
+  #app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .ice-cream-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .ice-cream-card:hover {
+    transform: scale(1.05);
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .ice-cream-card {
+      width: 100%;
+    }
+  }
+  

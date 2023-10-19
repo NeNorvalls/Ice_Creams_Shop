@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Page</title>
+  <!-- Include your stylesheets, if any -->
+</head>
+<body>
+    <nav>
+        <a href="/" class="active">Home</a>
+        <div id="navbar">
+            <div id="cart-icon" onclick="toggleCartPage()">🛒 <span id="cart-count">0</span></div>
+          </div>
+    </nav>
+    <div id="cart-container"></div>
+
+  <p id="total">Total: $0.00</p>
+<button id="clear-cart">Clear Cart</button>
+
+  <script type="module" src="./cart.js"></script>
+</body>
+</html>

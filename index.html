@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Ice Cream Shop</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="/" class="active">Home</a>
+            <div id="navbar">
+                <div id="cart-icon" onclick="toggleCartPage()">🛒 <span id="cart-count">0</span></div>
+              </div>
+        </nav>
+        <h1 class="animate-character">Nice Cream</h1>
+        <div id="app"></div>
+    </div>
+    <script type="module" src="./localStorage.js"></script>
+    <script type="module" src="./iceCreams.js"></script>
+    <script type="module" src="./homePage.js"></script>
+    <script type="module" src="./cart.js"></script>
+</body>
+</html>
