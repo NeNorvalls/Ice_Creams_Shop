@@ -73,8 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return cartItem;
   }
   
-  
-
   function getItemDetails(itemName) {
     const iceCream = iceCreams.find(item => item.name === itemName);
   
@@ -100,11 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function incrementItem(itemName) {
     const cart = getCartFromLocalStorage();
-    const updatedCart = [...cart, itemName];
-    updateCartInLocalStorage(updatedCart);
+
+    cart.push(itemName);
+    updateCartInLocalStorage(cart);
     renderCartItems();
-  }
-  
+}
+
+
   function decrementItem(itemName) {
     const cart = getCartFromLocalStorage();
     const index = cart.indexOf(itemName);
