@@ -1,13 +1,10 @@
-const CART_KEY = 'cart';
+// localStorage.js
 
-const getCartFromLocalStorage = () => {
-  const cartJson = localStorage.getItem(CART_KEY);
-  return cartJson ? JSON.parse(cartJson) : [];
-};
+export function getCartFromLocalStorage() {
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  return Array.isArray(cart) ? cart : [];
+}
 
-const updateCartInLocalStorage = (cart) => {
-  const cartJson = JSON.stringify(cart);
-  localStorage.setItem(CART_KEY, cartJson);
-};
-
-export { getCartFromLocalStorage, updateCartInLocalStorage };
+export function updateCartInLocalStorage(cart) {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
