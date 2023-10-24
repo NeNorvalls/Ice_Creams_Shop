@@ -63,23 +63,38 @@ document.addEventListener('DOMContentLoaded', () => {
     priceElement.innerText = `Price: $${(price * count).toFixed(2)}`;
     cartItem.appendChild(priceElement);
 
-    const increaseButton = document.createElement('button');
-    increaseButton.innerText = '+';
-    increaseButton.addEventListener('click', () => increaseQuantity(iceCream));
+    const increaseButton = createQuantityButton('+', () => increaseQuantity(iceCream));
     cartItem.appendChild(increaseButton);
 
-    const removeButton = document.createElement('button');
-    removeButton.innerText = 'Remove';
-    removeButton.addEventListener('click', () => removeItemFromCart(iceCream));
+    const decreaseButton = createQuantityButton('-', () => decreaseQuantity(iceCream));
+    cartItem.appendChild(decreaseButton);
+
+    const removeButton = createQuantityButton('Remove', () => removeItemFromCart(iceCream));
     cartItem.appendChild(removeButton);
 
     return cartItem;
+  }
+
+  function createQuantityButton(text, clickHandler) {
+    const button = document.createElement('button');
+    button.innerText = text;
+    button.addEventListener('click', clickHandler);
+    return button;
   }
 
   function increaseQuantity(iceCream) {
     cart.push(iceCream.name);
     updateCartInLocalStorage(cart);
     renderCart();
+  }
+
+  function decreaseQuantity(iceCream) {
+    const index = cart.lastIndexOf(iceCream.name);
+    if (index !== -1) {
+      cart.splice(index, 1);
+      updateCartInLocalStorage(cart);
+      renderCart();
+    }
   }
 
   function removeItemFromCart(iceCream) {

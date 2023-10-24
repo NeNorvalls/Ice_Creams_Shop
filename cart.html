@@ -15,9 +15,14 @@
                 <div id="cart-icon" onclick="toggleCartPage()">🛒 <span id="cart-count">0</span></div>
               </div>
         </nav>
-        <div id="cart-container"></div> 
+        <button id="clear-cart">Clear Cart</button>
         <p id="total">Total: $0.00</p>
-        <button id="clear-cart">Clear Cart</button> 
+        <p id="cart-count">0</p>
+
+        <div id="cart-container">
+          <!-- Cart items will be displayed here -->
+        </div>
+      
     </div>
     
   <script type="module" src="./cart.js" defer></script>
