@@ -87,8 +87,8 @@ nav a.active {
 }
 
 button {
-  background-color: #007BFF;
-  color: #fff;
+  background-color: #fff;
+  color: #222;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
@@ -100,7 +100,7 @@ button:hover {
 }
 
 .cart-item {
-  background-color: #f5f5f5; 
+  background: linear-gradient(135deg, #800080 25%, #FFA500 25%, #2ac32a 25%, #c42d88 25%);
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 10px;
@@ -109,9 +109,17 @@ button:hover {
   text-align: center;
   width: 200px;
   box-sizing: border-box;
-  color: #222;
+  color: #fff;
   transition: box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .cart-item {
+    width: 100%;
+    display: block; 
+    margin: 10px 0; 
+  }
 }
 
 .cart-item:hover {
