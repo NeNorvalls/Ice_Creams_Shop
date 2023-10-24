@@ -13,25 +13,28 @@ document.addEventListener('DOMContentLoaded', () => {
   clearCartButton.addEventListener('click', () => {
     cart = [];
     updateCartInLocalStorage(cart);
-    syncCartCounts(cart);
     renderCart();
-  })
+  });
 
   function renderCart() {
     cartContainer.innerHTML = '';
-
     let total = 0;
 
-    cart.forEach((itemName) => {
-      const iceCream = findIceCreamByName(itemName);
-      if (iceCream) {
-        const itemPrice = iceCream.price;
-        total += itemPrice;
+    const cartItems = {};
 
-        const cartItem = createCartItem(iceCream, cart);
-        cartContainer.appendChild(cartItem);
+    cart.forEach((itemName) => {
+      if (!cartItems[itemName]) {
+        cartItems[itemName] = { count: 1, iceCream: findIceCreamByName(itemName) };
+      } else {
+        cartItems[itemName].count += 1;
       }
     });
+
+    for (const item in cartItems) {
+      const cartItem = createCartItem(cartItems[item]);
+      cartContainer.appendChild(cartItem);
+      total += cartItems[item].iceCream.price * cartItems[item].count;
+    }
 
     totalElement.textContent = `Total: $${total.toFixed(2)}`;
     cartCountElement.textContent = cart.length;
@@ -41,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return iceCreams.find((iceCream) => iceCream.name === itemName);
   }
 
-  function createCartItem(iceCream, cart) {
+  function createCartItem(cartItemData) {
+    const { iceCream, count } = cartItemData;
     const { name, price } = iceCream;
-    const itemQuantity = getCount(cart, name); // Use the getCount function to get the quantity
 
     const cartItem = document.createElement('div');
     cartItem.classList.add('cart-item');
@@ -53,56 +56,38 @@ document.addEventListener('DOMContentLoaded', () => {
     cartItem.appendChild(nameElement);
 
     const quantityElement = document.createElement('p');
-    quantityElement.innerText = `Qty: ${itemQuantity}`;
+    quantityElement.innerText = `Qty: ${count}`;
     cartItem.appendChild(quantityElement);
 
     const priceElement = document.createElement('p');
-    priceElement.innerText = `Price: $${(price * itemQuantity).toFixed(2)}`;
+    priceElement.innerText = `Price: $${(price * count).toFixed(2)}`;
     cartItem.appendChild(priceElement);
+
+    const increaseButton = document.createElement('button');
+    increaseButton.innerText = '+';
+    increaseButton.addEventListener('click', () => increaseQuantity(iceCream));
+    cartItem.appendChild(increaseButton);
 
     const removeButton = document.createElement('button');
     removeButton.innerText = 'Remove';
-    removeButton.addEventListener('click', () => removeItemFromCart(iceCream, cart));
+    removeButton.addEventListener('click', () => removeItemFromCart(iceCream));
     cartItem.appendChild(removeButton);
 
     return cartItem;
   }
 
-  function getCount(cart, itemName) {
-    return cart.filter(item => item === itemName).length;
-  }
-
-  function syncCartCounts(cart) {
-    // Iterate through the iceCreams array and update counts based on the cart
-    iceCreams.forEach((iceCream) => {
-      const { name } = iceCream;
-      const count = getCount(cart, name);
-      // Update the count in the card for this item
-      updateCardCount(name, count);
-    });
-  }
-
-  // Function to update the count in the cards
-  function updateCardCount(itemName, count) {
-    const cards = document.getElementsByClassName('ice-cream-card');
-    for (let card of cards) {
-      if (card.querySelector('h3').innerText === itemName) {
-        card.querySelector('.count').innerText = ` (${count})`;
-      }
-    }
-  }
-  
-  function increaseQuantity(iceCream, cart) {
-    cart.push(iceCream.name); // Add the item to the cart
+  function increaseQuantity(iceCream) {
+    cart.push(iceCream.name);
     updateCartInLocalStorage(cart);
     renderCart();
   }
-  
 
   function removeItemFromCart(iceCream) {
-    cart = cart.filter((itemName) => itemName !== iceCream.name);
-    updateCartInLocalStorage(cart);
-    renderCart();
+    const index = cart.findIndex((itemName) => itemName === iceCream.name);
+    if (index !== -1) {
+      cart.splice(index, 1);
+      updateCartInLocalStorage(cart);
+      renderCart();
+    }
   }
-
 });
