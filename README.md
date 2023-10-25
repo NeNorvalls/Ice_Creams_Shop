@@ -1,6 +1,6 @@
 # Ice Cream Shop Web Application
-[View Demo](https://ice-creams-shop.netlify.app/)
 ![Screenshot](/images/ice_creams.jpg)
+[Visit My Project on Netlify](https://ice-creams-shop.netlify.app/)
 
 Welcome to the Ice Cream Shop web application! This project is a simple web application that allows users to explore and purchase a variety of ice cream flavors.
 
