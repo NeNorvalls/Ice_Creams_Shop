@@ -143,4 +143,21 @@ body {
       width: 100%;
     }
   }
+
+  .back-to-landing {
+    font-weight: bold;
+    display: block; 
+    margin: 0 auto; 
+    padding: 1rem; 
+    text-align: center; 
+    text-decoration: none;
+  }
+  
+  .back-to-landing:hover {
+    text-decoration: underline;
+    color: #ffd700;
+  }
+  
+  
+  
   
