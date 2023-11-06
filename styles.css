@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center;
     color: white;
   }
@@ -158,9 +158,15 @@ body {
     color: #ffd700;
   }
   
-  #goBackButton {
-    margin-bottom: 4rem;
+  .goBackButton {
+    margin: 2rem auto;
     text-align: center;
+    background-color: #1500ff;
+    color:#fff;
+  }
+
+  .goBackButton:hover {
+    color: #ffd700;
   }
   
   
