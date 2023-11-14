@@ -1,172 +1,176 @@
-@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nosifer&display=swap");
 
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    min-height: 100vh;
-    align-items: center;
-    color: white;
-  }
-  
-  body, .container, nav, button, h1, #app, .ice-cream-card, h3, p {
-    box-sizing: border-box;
-  }
-  
-  .container {
-    background-image: url('./images/background.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  nav {
-    background-color: #008000;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 15px;
-    padding: 5px;
-  }
-  
-  nav a.cart {
-    display: flex;
-    align-items: center;
-  }
-  
-  ion-icon {
-    margin-right: 5px;
-  }
-  
-  h1 {
-    position: relative;
-    letter-spacing: 2px;
-    text-align: center;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  align-items: center;
+  color: white;
+}
+
+body,
+.container,
+nav,
+button,
+h1,
+#app,
+.ice-cream-card,
+h3,
+p {
+  box-sizing: border-box;
+}
+
+.container {
+  background-image: url("./images/background.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+nav {
+  background-color: #008000;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 15px;
+  padding: 5px;
+}
+
+nav a.cart {
+  display: flex;
+  align-items: center;
+}
+
+ion-icon {
+  margin-right: 5px;
+}
+
+h1 {
+  position: relative;
+  letter-spacing: 2px;
+  text-align: center;
 }
 
 .animate-character {
-    font-size: 4em;
-    font-family: 'Nosifer', sans-serif;
-    font-weight: 900;
-    display: inline-block;
-    color: blue;
-    -webkit-text-stroke: 2px white;
+  font-size: 4em;
+  font-family: "Nosifer", sans-serif;
+  font-weight: 900;
+  display: inline-block;
+  color: blue;
+  -webkit-text-stroke: 2px white;
 }
 
 .intro {
-    margin-left: 2rem;
-    font-size: 24px;
-    font-weight: bold;
-    color: #0000ff;
+  margin-left: 2rem;
+  font-size: 24px;
+  font-weight: bold;
+  color: #0000ff;
 }
 
 @media screen and (max-width: 768px) {
-    .animate-character {
-        font-size: 3em;
-    }
+  .animate-character {
+    font-size: 3em;
+  }
 
-    .intro {
-        margin-left: 1rem;
-        font-size: 18px;
-    }
+  .intro {
+    margin-left: 1rem;
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .animate-character {
-        font-size: 2.5em;
-    }
+  .animate-character {
+    font-size: 2.5em;
+  }
 
-    .intro {
-        margin-left: 0.5rem;
-        font-size: 16px;
-    }
+  .intro {
+    margin-left: 0.5rem;
+    font-size: 16px;
+  }
 }
 
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
 
-  #app {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
+.ice-cream-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 15px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.ice-cream-card:hover {
+  transform: scale(1.05);
+}
+
+button {
+  background-color: darkred;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #0606e6;
+}
+
+p {
+  margin: 5px 0;
+  color: #0606e6;
+}
+
+@media screen and (max-width: 600px) {
   .ice-cream-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 15px;
-    width: 250px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
+    width: 100%;
   }
-  
-  .ice-cream-card:hover {
-    transform: scale(1.05);
-  }
-  
-  button {
-    background-color: darkred;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  h3 {
-    font-size: 18px;
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color: #0606e6;
-  }
-  
-  p {
-    margin: 5px 0;
-    color:#0606e6;
-  }
-  
-  @media screen and (max-width: 600px) {
-    .ice-cream-card {
-      width: 100%;
-    }
-  }
+}
 
-  .back-to-landing {
-    font-weight: bold;
-    display: block; 
-    margin: 0 auto; 
-    padding: 1rem; 
-    text-align: center; 
-    text-decoration: none;
-  }
-  
-  .back-to-landing:hover {
-    text-decoration: underline;
-    color: #ffd700;
-  }
-  
-  .goBackButton {
-    margin: 2rem auto;
-    text-align: center;
-    background-color: #1500ff;
-    color:#fff;
-  }
+.back-to-landing {
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
 
-  .goBackButton:hover {
-    color: #ffd700;
-  }
-  
-  
+.back-to-landing:hover {
+  text-decoration: underline;
+  color: #ffd700;
+}
+
+.go-back-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 1rem;
+}

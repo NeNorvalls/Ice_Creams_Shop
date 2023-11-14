@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Ice Cream Shop web application! Explore a variety of ice cream flavors and make your selection. Purchase your favorite ice cream today!">
-    <link rel="stylesheet" href="./styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to the Ice Cream Shop web application! Explore a variety of ice cream flavors and make your selection. Purchase your favorite ice cream today!"
+    />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Ice Cream Shop - Explore Delicious Ice Cream Flavors</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <nav>
-            <a href="/" class="active">Home</a>
-            <div id="navbar">
-                <div id="cart-icon" onclick="toggleCartPage()">🛒 <span id="cart-count">0</span></div>
-              </div>
-        </nav>
-        <span class="intro" id="goBackButton">Choose your favorite here!</span>
-            <h1  class="animate-character" id="rainbowText">Ice Cream</h1>
-        <div id="app"></div>
+      <nav>
+        <a href="/" class="active">Home</a>
+        <div id="navbar">
+          <div id="cart-icon" onclick="toggleCartPage()">
+            🛒 <span id="cart-count">0</span>
+          </div>
+        </div>
+      </nav>
+      <span class="intro">Choose your favorite here!</span>
+      <h1 class="animate-character" id="rainbowText">Ice Cream</h1>
+      <div id="app"></div>
+      <button id="goBackButton" class="go-back-button">
+        Go back to portfolio!
+      </button>
     </div>
     <script type="module" src="./iceCreams.js"></script>
     <script type="module" src="./localStorage.js"></script>
     <script type="module" src="./homePage.js"></script>
     <script type="module" src="./cart.js" defer></script>
-</body>
+    <script src="goBackButton.js"></script>
+  </body>
 </html>

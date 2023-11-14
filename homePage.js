@@ -117,11 +117,3 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "cart.html";
   };
 });
-
-const portfolioURL = "https://nenorvalls-frontend-fusions.netlify.app/";
-
-const goBackButton = document.getElementById("goBackButton");
-
-goBackButton.addEventListener("click", function () {
-  window.location.href = portfolioURL;
-});
