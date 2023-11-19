@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="View and manage your shopping cart at the Ice Cream Shop. Review the items in your cart, adjust quantities, and clear the cart.">
-  <link rel="stylesheet" href="./cart.css">
-  <title>Cart Page - Ice Cream Shop</title>
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="View and manage your shopping cart at the Ice Cream Shop. Review the items in your cart, adjust quantities, and clear the cart."
+    />
+    <link rel="stylesheet" href="./cart.css" />
+    <title>Cart Page - Ice Cream Shop</title>
+  </head>
+  <body>
     <div class="container-for-cart">
-        <nav>
-            <a href="/" class="active">Home</a>
-            <div id="navbar">
-                <div><span id="cart-count">0</span></div>
-              </div>
-        </nav>
-
-        <div id="cart-container">
-          <div id="cart-items-container">
-          <!-- Cart items will be displayed here -->
-          </div>
+      <nav>
+        <a href="/" class="active">Home</a>
+        <div id="navbar">
+          <div><span id="cart-count">0</span></div>
         </div>
-        <button id="clear-cart">Clear Cart</button>
-        <p id="total">Total: $0.00</p>
+      </nav>
+
+      <div id="cart-container">
+        <div id="cart-items-container"></div>
+      </div>
+      <button id="clear-cart">Clear Cart</button>
+      <p id="total">Total: $0.00</p>
     </div>
-    
-  <script type="module" src="./cart.js" defer></script>
-</body>
+
+    <script type="module" src="./cart.js" defer></script>
+  </body>
 </html>
