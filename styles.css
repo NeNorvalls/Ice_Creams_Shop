@@ -31,11 +31,11 @@ p {
 }
 
 nav {
-  background-color: #008000;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #7d067d;
 }
 
 nav a {
@@ -51,6 +51,10 @@ nav a.cart {
 
 ion-icon {
   margin-right: 5px;
+}
+
+span#cart-count {
+  color: #ffffff !important;
 }
 
 h1 {
